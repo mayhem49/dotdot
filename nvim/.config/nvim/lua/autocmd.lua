@@ -11,3 +11,11 @@ vim.api.nvim_create_autocmd("QuickFixCmdPost", {
     vim.cmd([[Trouble qflist open]])
   end,
 })
+
+--auto format
+--maybe other solution but it works for now
+vim.api.nvim_create_autocmd("BufWritePre", {
+  callback = function()
+    vim.cmd([[lua vim.lsp.buf.format({ async = false })]])
+  end,
+})
