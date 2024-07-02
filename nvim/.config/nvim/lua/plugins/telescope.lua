@@ -42,7 +42,7 @@ local config = function()
 end
 
 local keys = {
-  { "<leader><leader>",  "<cmd>Telescope buffers<cr>" },
+  { "<leader><leader>",  "<cmd>lua require('telescope.builtin').buffers({sort_lastused = true})<cr>" },
   { "<leader>ff",  "<cmd>Telescope find_files<cr>" },
   { "<leader>fg",  "<cmd>Telescope live_grep<cr>" },
   { "<leader>fr",  "<cmd>Telescope lsp_references<cr>" },
