@@ -46,6 +46,8 @@ set("n", "<leader>f", function()
   vim.lsp.buf.format()
 end, opts)
 
+--go to file, gF respects line number if available
+set("n", "gf", "gF", opts)
 
 --VISUAL MODE
 set("v", "<", "<gv", opts)
@@ -56,6 +58,7 @@ set("v", "J", ":move '>+1<cr>gv=gv", opts)
 set("v", "K", ":move '<-2<cr>gv=gv", opts)
 
 set("i", "<C-BS>", "<C-W>", opts)
+
 
 --=======================================
 ----------------Insert Mode mappings---------------------
