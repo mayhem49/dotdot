@@ -71,6 +71,8 @@ set("i", "<C-BS>", "<C-W>", opts)
 set("i", "<C-U>", "<C-G>u<C-W>", opts)
 set("i", "<C-W>", "<C-G>u<C-U>", opts)
 
+-- show mappings of current line on floating window
+set("n", "<leader>o", vim.diagnostic.open_float)
 
 
 -- use i,,<C- u, r, a

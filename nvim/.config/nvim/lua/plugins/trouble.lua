@@ -1,8 +1,8 @@
 return {
   "folke/trouble.nvim",
   cmd = "Trouble",
-  opts={
-    auto_close=true
+  opts = {
+    auto_close = true
   },
   keys = {
     {
@@ -37,7 +37,7 @@ return {
     },
     {
       "<leader>cq",
-      "<cmd>Trouble qflist toggle<cr>",
+      "<cmd>Trouble qflist toggle focus=true<cr>",
       desc = "Quickfix List (Trouble)",
     },
     {
@@ -74,4 +74,3 @@ return {
     }
   }
 }
-
