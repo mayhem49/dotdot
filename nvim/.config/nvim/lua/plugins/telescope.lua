@@ -10,7 +10,11 @@ local config = function()
       "^%.git/",
       "^%.git$",
       "lazy-lock.json",
-      "%.lock"
+      "%.lock",
+      --elixir
+      "^%_build/",
+      "^%.elixir_ls/"
+
 
     },
     mappings = {
