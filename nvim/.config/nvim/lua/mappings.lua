@@ -11,6 +11,9 @@ g.maplocalleader = " "
 --=======================================
 set("n", "<leader>v", "mfgg=G`fzz", opts)
 set("n", "<leader>w", ":w<cr>", opts)
+
+set("n", "s", "^", opts)
+set("n", "e", "g_", opts)
 --rustlings
 set("n", "<leader>d", "/\\/\\/ I AM NOT DONE<cr>dddd:w<cr>", opts)
 
