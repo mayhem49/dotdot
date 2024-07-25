@@ -1,4 +1,4 @@
-return {{
+return { {
   "neovim/nvim-lspconfig"
 },
   {
@@ -9,15 +9,15 @@ return {{
   },
   {
     "williamboman/mason-lspconfig.nvim",
-    dependencies={"williamboman/mason.nvim"},
+    dependencies = { "williamboman/mason.nvim" },
     config = function()
       require("mason-lspconfig").setup()
 
       require("mason-lspconfig").setup_handlers({
-        function (server)
+        function(server)
           require("lspconfig")[server].setup({})
         end,
-        ["lua_ls"] = function ()
+        ["lua_ls"] = function()
           local lspconfig = require("lspconfig")
           lspconfig.lua_ls.setup {
             settings = {
@@ -29,6 +29,19 @@ return {{
             }
           }
         end,
+        ["tailwindcss"] = function()
+          local lspconfig = require("lspconfig")
+          lspconfig.tailwindcss.setup({
+            filetypes = { "html", "elixir", "eelixir", "heex" },
+            init_options = {
+              userLanguages = {
+                elixir = "html-eex",
+                eelixir = "html-eex",
+                heex = "html-eex",
+              },
+            },
+          })
+        end
       })
 
 
@@ -37,5 +50,3 @@ return {{
     end
   }
 }
-
-

@@ -9,14 +9,17 @@ g.maplocalleader = " "
 --=======================================
 ----------------TEMP---------------------
 --=======================================
-set("n", "<leader>v", "mfgg=G`fzz", opts)
+-- :keepjumps don't change the jumplist so 1st line willnot be included in my jumplist after doing indentation
+set("n", "<leader>v", "mf:keepjumps normal gg<cr>:keepjumps normal =G<cr> :keepjumps normal `f<cr>", opts)
 set("n", "<leader>w", ":w<cr>", opts)
 
-set("n", "s", "^", opts)
-set("n", "e", "g_", opts)
---rustlings
-set("n", "<leader>d", "/\\/\\/ I AM NOT DONE<cr>dddd:w<cr>", opts)
+--quickfix
+set("n", "<leader>j", ":cprevious<cr>", opts)
+set("n", "<leader>k", ":cnext<cr>", opts)
 
+set("n", "s", "^", opts)
+set("n", "E", "g_", opts)
+set("n", "<leader>h", ":noh<cr>", opts)
 --=======================================
 -- set("n", "<C-n>", cmd.Ex, opts)
 
