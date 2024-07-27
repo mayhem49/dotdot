@@ -1,0 +1,22 @@
+#[includeIf "gitdir:~/dir1/"] # include for all .git projects under dir1/ 
+  #path = ~/dir1/.gitconfig.filename
+
+#[includeIf "gitdir:~/dir2/"] # include for all .git projects under dir1/ 
+  #path = ~/dir2/.gitconfig.filename
+
+
+[include]
+  path = ~/.multiuser.gitconfig
+
+[init]
+  defaultBranch = main
+
+
+[core]
+  editor = nvim
+
+[alias]
+  log = log --oneline
+  amend = commit --amend
+  log = log --graph -10 --branches --remotes --tags  --format=format:'%Cgreen%h %Creset• %<(75,trunc)%s (%cN, %cr) %Cred%d' --date-order
+	alias = config --get-regexp ^alias\\.
