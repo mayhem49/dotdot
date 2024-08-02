@@ -13,9 +13,8 @@ local config = function()
       "%.lock",
       --elixir
       "^%_build/",
-      "^%.elixir_ls/"
-
-
+      "^%.elixir_ls/",
+      "^%.lexical/"
     },
     mappings = {
       i = {
@@ -27,21 +26,33 @@ local config = function()
         ["<c-t>"] = open_with_trouble
       }
     },
-    pickers = {
-      find_files = {
-        -- find hidden files but not .git/*
-        find_command = { 'rg', '--files', '--hidden', '-g', '!.git' },
-      },
-      buffers = {
-        -- didn't work i guess, so needed to add again
-        sort_mru = true,
-        sort_lastused = true,
-      }
+    vimgrep_arguments = {
+      'rg',
+      '--color=never',
+      '--no-heading',
+      '--with-filename',
+      '--line-number',
+      '--column',
+      '--hidden',
+      '--smart-case',
+
     },
+  }
+  local pickers = {
+    find_files = {
+      -- find hidden files but not .git/*
+      find_command = { 'rg', '--files', '--hidden', '-g', '!.git' },
+    },
+    buffers = {
+      -- didn't work i guess, so needed to add again
+      sort_mru = true,
+      sort_lastused = true,
+    }
   }
 
   telescope.setup({
     defaults = defaults,
+    pickers = pickers
   })
 end
 
