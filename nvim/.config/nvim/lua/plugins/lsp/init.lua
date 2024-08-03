@@ -32,10 +32,17 @@ return { {
         ["tailwindcss"] = function()
           local lspconfig = require("lspconfig")
           lspconfig.tailwindcss.setup({
-            filetypes = { "html", "elixir", "eelixir", "heex" },
+            -- filetypes = { "html", "elixir", "eelixir", "heex" },
+            -- init_options = {
+            --   userLanguages = {
+            --     elixir = "html-eex",
+            --     eelixir = "html-eex",
+            --     heex = "html-eex",
+            --   },
+            -- },
+            filetypes = { "html", "eelixir", "heex" },
             init_options = {
               userLanguages = {
-                elixir = "html-eex",
                 eelixir = "html-eex",
                 heex = "html-eex",
               },
