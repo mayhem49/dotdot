@@ -9,13 +9,10 @@ source $BASHRC_CONFIGS/alias.sh
 # such as aliases that contains personal folder names and other things ...  
 # such as shortcuts for certain deep nested directory that is used frequently
 source $BASHRC_CONFIGS/user_aliases.sh
+source $BASHRC_CONFIGS/user_sources.sh
 
 source $BASHRC_CONFIGS/scripts.sh
 
-source $BASHRC_CONFIGS/user_aliases.sh
-
-## for rust 
-source $HOME/.cargo/env
 
 # start tmux if tmux exists
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then

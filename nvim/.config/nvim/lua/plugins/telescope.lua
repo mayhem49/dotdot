@@ -7,7 +7,6 @@ local config = function()
   local defaults = {
     layout_strategy = "horizontal",
     file_ignore_patterns = {
-      "assets/",
       "^%.git/",
       "^%.git$",
       "lazy-lock.json",
