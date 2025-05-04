@@ -10,7 +10,7 @@ alias vim="nvim"
 
 # easily open certain conf files
 # there are better options to do this; but it works
-alias profile="nvim ~/.bashrc"
+alias profile="nvim $BASHRC_CONFIGS/init.sh"
 alias nvile="nvim  -c \"cd %:h\" ~/.config/nvim/init.lua  " #nv(nvim) + ile
 alias tmile="nvim ~/.tmux.conf" #tm(tmux) + ile
 alias hostfile="sudoedit nvim /etc/hosts"

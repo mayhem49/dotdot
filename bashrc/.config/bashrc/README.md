@@ -9,4 +9,5 @@ source $BASHRC_CONFIGS/init.sh
 - Inside stow directory, run `stow bashrc`. This will create necessary files in `.config/bashrc`.
 - paste the default .bashrc files into `$CONFIGS/base.sh`
 - Replace the content of bashrc file with above code.
+- run `source ~/.bashrc`. You are good to go now.
 
