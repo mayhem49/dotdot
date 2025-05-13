@@ -82,4 +82,23 @@ set("i", "<C-W>", "<C-G>u<C-U>", opts)
 set("n", "<leader>o", vim.diagnostic.open_float)
 
 
+-- insert time
+--set("n", "<leader>tt", '<cmd>r! date -u "+\\%Y-\\%m-\\%dT\\%H:\\%M:\\%S.\\%3NZ"<cr>', opts)
+--set("n", "<leader>tb", '<cmd>r! date -u --date="-15 seconds" "+\\%Y-\\%m-\\%dT\\%H:\\%M:\\%S.\\%3NZ"<cr>', opts)
+
+
+-- GPT begin
+-- Insert current UTC timestamp inline
+set("n", "<leader>tt", function()
+  local ts = vim.fn.system("date -u '+%Y-%m-%dT%H:%M:%S.%3NZ'"):gsub("\n", "")
+  vim.api.nvim_put({ ts }, 'c', false, true)
+end, opts)
+
+-- Insert UTC timestamp 15 seconds ago inline
+set("n", "<leader>tb", function()
+  local ts = vim.fn.system("date -u --date='-15 seconds' '+%Y-%m-%dT%H:%M:%S.%3NZ'"):gsub("\n", "")
+  vim.api.nvim_put({ ts }, 'c', false, true)
+end, opts)
+-- GPT end
+
 -- use i,,<C- u, r, a
