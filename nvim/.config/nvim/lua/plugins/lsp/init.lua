@@ -1,6 +1,7 @@
-return { {
-  "neovim/nvim-lspconfig"
-},
+return {
+  {
+    "neovim/nvim-lspconfig"
+  },
   {
     "williamboman/mason.nvim",
     config = function()
@@ -11,48 +12,59 @@ return { {
     "williamboman/mason-lspconfig.nvim",
     dependencies = { "williamboman/mason.nvim" },
     config = function()
-      require("mason-lspconfig").setup()
-
-      require("mason-lspconfig").setup_handlers({
-        function(server)
-          require("lspconfig")[server].setup({})
-        end,
-        ["lua_ls"] = function()
-          local lspconfig = require("lspconfig")
-          lspconfig.lua_ls.setup {
-            settings = {
-              Lua = {
-                diagnostics = {
-                  globals = { "vim" }
-                }
-              }
-            }
-          }
-        end,
-        ["tailwindcss"] = function()
-          local lspconfig = require("lspconfig")
-          lspconfig.tailwindcss.setup({
-            -- filetypes = { "html", "elixir", "eelixir", "heex" },
-            -- init_options = {
-            --   userLanguages = {
-            --     elixir = "html-eex",
-            --     eelixir = "html-eex",
-            --     heex = "html-eex",
-            --   },
-            -- },
-            filetypes = { "html", "eelixir", "heex" },
-            init_options = {
-              userLanguages = {
-                eelixir = "html-eex",
-                heex = "html-eex",
-              },
-            },
-          })
-        end
+      require("mason-lspconfig").setup({
+        ensure_installed = {
+          'ts_ls',
+          'eslint',
+          'html',
+          'cssls',
+          'gopls',
+          'lua_ls'
+        },
       })
 
+      vim.lsp.config('lua_ls', {
+        settings = {
+          Lua = {
+            diagnostics = {
+              globals = { "vim" }
+            }
+          }
+        }
+      })
 
-      --todo setup cmp_nvim_lsp
+      vim.lsp.config('ts_ls', {})
+
+      vim.lsp.config('tailwindcss', {
+        -- filetypes = { "html", "elixir", "eelixir", "heex" },
+        -- init_options = {
+        --   userLanguages = {
+        --     elixir = "html-eex",
+        --     eelixir = "html-eex",
+        --     heex = "html-eex",
+        --   },
+        -- },
+        filetypes = { "html", "eelixir", "heex" },
+        init_options = {
+          userLanguages = {
+            eelixir = "html-eex",
+            heex = "html-eex",
+          },
+        },
+      })
+
+      vim.lsp.config('gopls', {
+        settings = {
+          gopls = {
+            ["formatting.gofumpt"] = false,
+            --["formatting.formatTool"] = "goimports", -- optional
+            usePlaceholders = true,
+            completeUnimported = true,
+            staticcheck = true,
+          }
+        }
+
+      })
       --local capabilities = require('cmp_nvim_lsp').default_capabilities()
     end
   }
