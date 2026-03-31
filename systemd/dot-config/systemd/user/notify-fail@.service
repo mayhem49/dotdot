@@ -1,0 +1,6 @@
+[Unit]
+Description=Systemd Unit Failure Notification
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/notify-send "Service Failure: %i" "Check 'journalctl --user -u %i' for details." --urgency=critical

@@ -1,3 +1,5 @@
 --dir=~/mayhem/dotdot
 --target=~
+--dotfiles
+-v
 

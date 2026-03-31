@@ -1,0 +1,11 @@
+[Unit]
+Description=Run Theme Switcher every 30 mins
+
+[Timer]
+OnCalendar=*-*-* 07:00:00
+OnCalendar=*-*-* 19:00:00
+OnBootSec=1min
+Persistent=true
+
+[Install]
+WantedBy=timers.target

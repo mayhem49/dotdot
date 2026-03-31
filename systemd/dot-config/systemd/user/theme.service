@@ -1,0 +1,8 @@
+[Unit]
+Description=Auto Theme Switcher
+OnFailure=notify-fail@%n.service
+
+[Service]
+Type=oneshot
+# Systemd looks for the script where Stow linked it
+ExecStart=%h/.config/systemd/user/scripts/theme-switch.sh

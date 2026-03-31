@@ -1,0 +1,46 @@
+# some files to be ignored by stow
+# This file lives in ~/.stow-global-ignore
+
+# stow have 3 ignore files: per package(.stow-local-ignore), global(.stow-global-ignore) and default
+# However, it doesn't combine all of them, so stow-global-ignore is preferred at the moment.
+
+# Reference Docs: https://www.gnu.org/software/stow/manual/stow.html#Ignore-Lists
+
+# --- Documentation & Metadata ---
+README.md
+TODO.md
+TODO
+^/LICENSE.*
+^/COPYING.*
+
+# --- Version Control ---
+\.git$
+\.gitignore$
+\.gitmodules$
+\.gitattributes$
+
+# --- Build & Task Artifacts ---
+# Matches your .tasks folders seen in your tree
+\.tasks$
+# Common Makefile and build artifacts
+^/Makefile$
+\.o$
+\.lo$
+\.la$
+
+# --- Editor & System Junk ---
+# Emacs/Vim backup files
+.+~
+\#.*\#
+\.swp$
+\.swo$
+# macOS/Linux metadata
+\.DS_Store
+\.directory
+# Python cache
+__pycache__
+\.pytest_cache
+
+.tasks
+common.mk
+Makefile
