@@ -13,7 +13,7 @@ alias vim="nvim"
 alias profile="nvim -c \"cd %:h\" $BASHRC_CONFIGS/init.sh"
 alias nvile="nvim  -c \"cd %:h\" ~/.config/nvim/init.lua  " #nv(nvim) + ile
 alias tmile="nvim -c \"cd %:h\" ~/.config/tmux/tmux.conf" #tm(tmux) + ile
-alias hostfile="sudoedit nvim /etc/hosts"
+alias hhostfile="sudoedit nvim /etc/hosts"
 alias emile="nvim -c \"cd %:h\" ~/.config/alacritty/alacritty.toml"
 alias gitile="nvim -c \"cd %:h\" ~/.gitconfig"
 
@@ -83,3 +83,5 @@ alias credo="mix credo --format flycheck >| credo.log"
 alias penv="source myenv/bin/activate"
 
 
+# ignore .git and other folders when using tree commands with -a flag
+alias tree="tree -a -I '.git|node_modules|.venv'"
