@@ -7,6 +7,7 @@ alias sudo="sudo "
 alias cls="clear"
 
 alias vim="nvim"
+alias nano="nvim"
 
 # easily open certain conf files
 # there are better options to do this; but it works
@@ -38,6 +39,11 @@ alias docker="sudo docker"
 alias lsd="ls -d */" # list directory
 alias lsa="ls -a" # list all file_entries
 alias lsal="ls -ahl" # list all file_entriooes with more details
+
+lsf(){
+  # -p appends / to directory, we filter those using grep
+  ls "$@" -p | grep -v /$
+}
 
 # run last run command
 # TODO: add for second last command too 
@@ -71,9 +77,9 @@ alias serve="cls && iex -S mix phx.server"
 alias mixt="mix test"
 alias mixf="mix format"
 alias mixr="mix run"
-alias mixrh="cls && mix run --no-halt"
+alias mixnh="cls && mix run --no-halt"
 alias mixs="cls && iex -S mix"
-alias mixc="mix compile"
+alias mixc="iex -S mix compile" 
 alias mixdb="mix ecto.drop && mix ecto.create && mix ecto.migrate --log-migrations-sql --log-migrator-sql &&   mix run priv/repo/seeds.exs "
 alias credo="mix credo --format flycheck >| credo.log"
 
@@ -85,3 +91,6 @@ alias penv="source myenv/bin/activate"
 
 # ignore .git and other folders when using tree commands with -a flag
 alias tree="tree -a -I '.git|node_modules|.venv'"
+
+# usage: `aliasg git` eqv. to: `alias | grep git`
+alias galias="alias | grep "
