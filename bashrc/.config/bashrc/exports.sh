@@ -5,6 +5,8 @@ export SUDO_EDITOR="nvim"
 export NPM_CONFIG_PREFIX=~/.npm-global
 export PATH=$PATH:~/.npm-global/bin
 
+export PATH=$PATH:$(go env GOPATH)/bin
+
 # I forgot for which apps this was done for
 # probably snowsql?
 #export PATH=~/bin:$PATH

@@ -18,7 +18,7 @@ help: ## Display all available commands
 STOW_IGNORE  := $(HOME)/.stow-global-ignore
 
 init: ## Setup global stow ignore (Run this before any install)
-	@ln -sf $(CURDIR)/stow-global-ignore $(STOW_IGNORE)
+	@ln -sf $(CURDIR)/.stow-global-ignore $(STOW_IGNORE)
 	@echo "$(GREEN)✅ Global ignore linked to $(STOW_IGNORE)$(RESET)"
 
 # --- Global Operations ---

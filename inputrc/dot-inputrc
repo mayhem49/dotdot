@@ -1,0 +1,9 @@
+# C-a start of line
+# C-e end of line
+# C-w backward kill word
+$include /etc/inputrc
+
+"\C-f": forward-word
+"\C-b": backward-word
+"\C-u": kill-word
+

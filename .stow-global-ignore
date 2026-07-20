@@ -43,4 +43,7 @@ __pycache__
 
 .tasks
 common.mk
+README
+
+^/README.*
 Makefile
