@@ -1,6 +1,5 @@
 local set = vim.keymap.set
 local opts = { noremap = true, silent = false }
-local cmd = vim.cmd
 local g = vim.g
 
 g.mapleader = " "
@@ -13,9 +12,11 @@ g.maplocalleader = " "
 set("n", "<leader>v", "mf:keepjumps normal gg<cr>:keepjumps normal =G<cr> :keepjumps normal `f<cr>", opts)
 set("n", "<leader>w", ":w<cr>", opts)
 
---quickfix
+-- quickfix
 set("n", "<leader>j", ":cprevious<cr>", opts)
 set("n", "<leader>k", ":cnext<cr>", opts)
+set("n", "<leader>d", vim.diagnostic.setloclist, opts) -- current buffer only
+
 
 set("n", "s", "^", opts)
 set("n", "E", "g_", opts)

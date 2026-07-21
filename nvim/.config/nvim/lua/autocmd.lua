@@ -36,8 +36,24 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
     -- At this point I really can't undestand the differences in definition vs implemenation
 
-    --set("n", "<leader>f", function()
-    --vim.lsp.buf.format()
-    --end, opts)
+    -- trigger format without saving buffer
+    vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, opts)
+
+
+    -- the native open_floating_preview sets concealcursor to ""
+    -- this is all good until you focus on that window
+    -- and then the concealed markdown backtics '````' gets un-concealed
+    -- but the window height doesn't changes, and stuff gets hidden in a very small window
+    -- ofcourse the alternative is to either use larger window
+    local orig = vim.lsp.util.open_floating_preview
+    vim.lsp.util.open_floating_preview = function(contents, syntax, opts, ...)
+      local bufnr, winid = orig(contents, syntax, opts, ...)
+
+      print("hello")
+      vim.wo[winid].concealcursor = "nc"
+      -- vim.wo[winid].conceallevel = 0
+
+      return bufnr, winid
+    end
   end
 })
