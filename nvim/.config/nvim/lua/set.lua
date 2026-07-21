@@ -26,3 +26,5 @@ opt.incsearch = true
 opt.scrolloff = 4
 opt.swapfile = false
 opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+
+opt.winborder = 'rounded'

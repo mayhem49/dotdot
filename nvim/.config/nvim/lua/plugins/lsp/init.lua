@@ -13,7 +13,16 @@ return {
     automatic_enable = true,
   },
   dependencies = {
-    { "mason-org/mason.nvim", opts = {} },
-    "neovim/nvim-lspconfig",
+    {
+      "mason-org/mason.nvim",
+      opts = {},
+    },
+    {
+      "neovim/nvim-lspconfig",
+      event = { "BufReadPre", "BufNewFile" },
+      config = function()
+      end
+    }
+    ,
   },
 }
