@@ -42,16 +42,24 @@ set("n", "N", "Nzzzv", opts)
 --save and quit
 set("n", "<leader>s", ":w", opts)
 
+--comment
+--set("n", "<C-/>", ":normal gcc<cr>", opts)
+
+
+-- please note that the native `gc` keybind supports text objects,
+-- so to comment/uncomment till next line it is better to use gc}
+-- single line comment toggle
+-- remap is required here as gcc isnot a native command itself
+set("n", "<C-_>", "gcc", vim.tbl_extend("force", opts, { remap = true }))
+-- set("n", "<C-_>", ":normal gcc<cr>", opts)
+set("v", "<C-_>", "gc", vim.tbl_extend("force", opts, { remap = true }))
+
 --clipboard
 set("n", "<leader>y", "\"+y", opts)
 set("v", "<leader>y", "\"+y", opts)
 set("n", "<leader>p", "\"+p", opts)
 set("n", "yp", "\"0p", opts) -- paste from yank register(0)
 
---format
-set("n", "<leader>f", function()
-  vim.lsp.buf.format()
-end, opts)
 
 --go to file, gF respects line number if available
 set("n", "gf", "gF", opts)
@@ -85,7 +93,6 @@ set("n", "<leader>o", vim.diagnostic.open_float)
 -- insert time
 --set("n", "<leader>tt", '<cmd>r! date -u "+\\%Y-\\%m-\\%dT\\%H:\\%M:\\%S.\\%3NZ"<cr>', opts)
 --set("n", "<leader>tb", '<cmd>r! date -u --date="-15 seconds" "+\\%Y-\\%m-\\%dT\\%H:\\%M:\\%S.\\%3NZ"<cr>', opts)
-
 
 -- GPT begin
 -- Insert current UTC timestamp inline
