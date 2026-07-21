@@ -19,14 +19,19 @@ return {
     lazy = false,     -- make sure we load this during startup if it is your main colorscheme
     priority = 1000,  -- make sure to load this before all the other start plugins
     style = "warmer", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
+    -- style = "light", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
     config = function()
       -- load the colorscheme here
       -- vim.cmd([[colorscheme tokyonight]])
       --vim.cmd([[colorscheme catppuccin-frappe]])
       -- vim.cmd([[colorscheme darkearth]])
-      vim.cmd([[colorscheme onedark]])
+      -- vim.cmd([[colorscheme onedark]])
       -- vim.cmd([[colorscheme miasma]])
       -- vim.cmd([[colorscheme melange]])
+      require('onedark').setup {
+        style = 'light'
+      }
+      require('onedark').load()
     end,
   },
   -- minimal installations
