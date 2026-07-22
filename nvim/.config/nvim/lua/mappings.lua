@@ -82,13 +82,16 @@ set("i", "<C-BS>", "<C-W>", opts)
 -- Basically put frequently used insert mode commands in the right hand,
 -- since I use left shift
 
--- delete word before the cursor
--- <C-G>u sets undo point for each word deletion.
-set("i", "<C-U>", "<C-G>u<C-W>", opts)
-set("i", "<C-W>", "<C-G>u<C-U>", opts)
-
 -- show mappings of current line on floating window
 set("n", "<leader>o", vim.diagnostic.open_float)
+
+-- only show diagnostic in virtual line for current cursor line
+vim.diagnostic.config({
+  virtual_text = {
+    current_line = true,
+    severity = { min = vim.diagnostic.severity.WARN }
+  },
+})
 
 
 -- insert time
