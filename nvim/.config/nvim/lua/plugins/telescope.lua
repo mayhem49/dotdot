@@ -50,10 +50,16 @@ local config = function()
     }
   }
 
+  local extensions = {
+    ["ui-select"] = {
+    }
+  }
   telescope.setup({
     defaults = defaults,
     pickers = pickers
   })
+
+  telescope.load_extension("ui-select")
 end
 
 local keys = {

@@ -29,10 +29,18 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- grt type_definition
     -- grr references
     -- grn rename
-    -- gra code_action
     -- gri implemenation
+    -- gra code_action
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
     vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, opts)
+    -- see actions-preview plugin configuration
+    -- vim.keymap.set("n", "gra", function()
+    --   vim.lsp.buf.code_action({
+    --     filter = function(action, _)
+    --       return not action.disabled
+    --     end,
+    --   })
+    -- end , opts)
 
     -- At this point I really can't undestand the differences in definition vs implemenation
 
