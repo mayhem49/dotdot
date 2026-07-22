@@ -57,7 +57,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.lsp.util.open_floating_preview = function(contents, syntax, opts, ...)
       local bufnr, winid = orig(contents, syntax, opts, ...)
 
-      print("hello")
       vim.wo[winid].concealcursor = "nc"
       -- vim.wo[winid].conceallevel = 0
 

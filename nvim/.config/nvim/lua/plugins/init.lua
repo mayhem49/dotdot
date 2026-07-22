@@ -29,7 +29,8 @@ return {
       -- vim.cmd([[colorscheme miasma]])
       -- vim.cmd([[colorscheme melange]])
       require('onedark').setup {
-        style = 'light'
+        --style = 'light'
+        style = 'dark'
       }
       require('onedark').load()
     end,

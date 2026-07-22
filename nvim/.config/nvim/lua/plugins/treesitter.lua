@@ -51,11 +51,18 @@ return {
       vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
       vim.wo.foldmethod = "expr"
       -- ensure folds are open to begin with
-      vim.o.foldlevel = 99
+      vim.opt.foldlevel = 99
+      vim.opt.foldcolumn = "0"
+      -- for highlighting
+      vim.opt.foldtext = ""
+      -- donot open fold on block movement
+      -- see :h foldopen
+      vim.opt.foldopen:remove({ "block" })
 
       -- enables treesitter based indentation
       vim.b.did_indent = 1 -- this right here prevents built-in indent scripts from loading
       vim.bo.indentexpr = "v:lua.require'nvim-treesitter.indent'.get_indent(v:lnum)"
+      vim.keymap.set("n", "<leader>e", "za", { noremap = true, silent = true })
 
       return true
     end
