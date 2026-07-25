@@ -6,6 +6,8 @@ export NPM_CONFIG_PREFIX=~/.npm-global
 export PATH=$PATH:~/.npm-global/bin
 
 export PATH=$PATH:$(go env GOPATH)/bin
+export EDITOR=nvim
+export VISUAL=nvim
 
 # I forgot for which apps this was done for
 # probably snowsql?

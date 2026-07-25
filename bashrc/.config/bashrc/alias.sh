@@ -11,12 +11,13 @@ alias nano="nvim"
 
 # easily open certain conf files
 # there are better options to do this; but it works
-alias profile="nvim -c \"cd %:h\" $BASHRC_CONFIGS/init.sh"
-alias nvile="nvim  -c \"cd %:h\" ~/.config/nvim/init.lua  " #nv(nvim) + ile
-alias tmile="nvim -c \"cd %:h\" ~/.config/tmux/tmux.conf" #tm(tmux) + ile
+# # TODO: debug later
+alias profile="nvim  $BASHRC_CONFIGS"
+alias nvile="nvim   ~/.config/nvim" #nv(nvim) + ile
+alias tmile="nvim  ~/.config/tmux/tmux.conf" #tm(tmux) + ile
 alias hhostfile="sudoedit nvim /etc/hosts"
-alias emile="nvim -c \"cd %:h\" ~/.config/alacritty/alacritty.toml"
-alias gitile="nvim -c \"cd %:h\" ~/.gitconfig"
+alias emile="nvim  ~/.config/alacritty/alacritty.toml"
+alias gitile="nvim  ~/.gitconfig"
 
 
 # source bashrc
@@ -31,9 +32,6 @@ alias postgres="sudo -iu postgres psql"
 
 alias prolog="swipl"
 alias mssql="sqlcmd -S localhost -U sa -No -P Password12"
-
-# I think this is bad
-alias docker="sudo docker"
 
 #ls
 alias lsd="ls -d */" # list directory
@@ -93,4 +91,6 @@ alias penv="source myenv/bin/activate"
 alias tree="tree -a -I '.git|node_modules|.venv'"
 
 # usage: `aliasg git` eqv. to: `alias | grep git`
-alias galias="alias | grep "
+alias galias="alias | grep"
+
+alias panel="xfce4-panel &"
