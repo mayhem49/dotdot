@@ -8,6 +8,10 @@ export PATH=$PATH:~/.npm-global/bin
 export PATH=$PATH:$(go env GOPATH)/bin
 export EDITOR=nvim
 export VISUAL=nvim
+export HISTFILESIZE=10000
+
+# so new shell receibes history of parent shell
+PROMPT_COMMAND+=('history -a')
 
 # I forgot for which apps this was done for
 # probably snowsql?
